@@ -20,7 +20,7 @@
         <div class="card-body">
           <div class="row">
             <div class="col-4" *ngFor="let star of stars">
-              <span class="badge badge-primary" (click)="starClick(star)" [class.badge-warning]="activateStarClass(star)">{{star}}</span>
+              <span class="badge badge-primary" (click)="starClick(star)" [class.badge-warning]="star === selectedStars">{{star}}</span>
             </div>
           </div>
         </div>

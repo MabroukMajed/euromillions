@@ -36,6 +36,11 @@ export class AppComponent implements OnInit {
     this.generateGrille(this.gridNumber, this.starNumber);
   }
 
+  /**
+   *
+   * @param gridNumber
+   * @param starNumber
+   */
   generateGrille(gridNumber, starNumber) {
     const grids = [];
     const stars = [];
@@ -50,6 +55,10 @@ export class AppComponent implements OnInit {
     this.stars = stars;
   }
 
+  /**
+   *
+   * @param Item
+   */
   gridClick(Item) {
     const index: number = this.selectedGrids.indexOf(Item);
     if (index !== -1) {
@@ -60,27 +69,26 @@ export class AppComponent implements OnInit {
     this.calculTotal();
   }
 
+  /**
+   *
+   * @param Item
+   */
   starClick(Item) {
-    const index: number = this.selectedStars.indexOf(Item);
-    if (index !== -1) {
-      this.selectedStars.splice(index, 1);
-    } else {
-      this.selectedStars.push(Item);
-    }
+    this.selectedStars = Item;
     this.calculTotal();
   }
 
+  /**
+   *
+   * @param Item
+   */
   activateGrisClass(Item) {
     return (this.selectedGrids.indexOf(Item) !== -1);
   }
 
-  activateStarClass(Item) {
-    return (this.selectedStars.indexOf(Item) !== -1);
-  }
-
   calculTotal() {
     const selectedGridsNumber = this.selectedGrids.length;
-    const selectedStarsNumber = this.selectedStars.length;
+    const selectedStarsNumber = this.selectedStars;
     let total = 0;
     _.map(this.euroMillions.multiples, function (Item, key) {
       if (_.isEqual(Item.pattern, [selectedGridsNumber, selectedStarsNumber])) {
