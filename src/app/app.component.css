@@ -1,0 +1,19 @@
+.badge {
+  width: 35px;
+  border-radius: 20px;
+  display: inline-block;
+  height: 35px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.col-1-10,
+.col-sm-1-10 {
+  position: relative;
+  min-height: 1px;
+}
+
+.col-1-10 {
+  width: 10%;
+  float: left;
+}
