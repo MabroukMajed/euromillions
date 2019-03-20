@@ -90,11 +90,13 @@ export class AppComponent implements OnInit {
     const selectedGridsNumber = this.selectedGrids.length;
     const selectedStarsNumber = this.selectedStars;
     let total = 0;
-    _.map(this.euroMillions.multiples, function (Item, key) {
-      if (_.isEqual(Item.pattern, [selectedGridsNumber, selectedStarsNumber])) {
-        total = Item.cost.value;
-      }
-    });
+    if (this.euroMillions.multiples) {
+      _.map(this.euroMillions.multiples, function (Item, key) {
+        if (_.isEqual(Item.pattern, [selectedGridsNumber, selectedStarsNumber])) {
+          total = Item.cost.value;
+        }
+      });
+    }
     this.total = total;
   }
 }
