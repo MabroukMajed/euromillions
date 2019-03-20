@@ -7,6 +7,26 @@
   margin: 10px;
 }
 
+.star {
+  margin-bottom: 24px;
+}
+
+.star span {
+  position: absolute;
+  left: 30px;
+  top: 12px;
+  font-weight: bold;
+}
+
+#stars .star:nth-child(-n+9) span  {
+  left: 36px;
+}
+
+.star i {
+  font-size: 45px;
+  color: gold;
+}
+
 .col-1-10,
 .col-sm-1-10 {
   position: relative;

@@ -18,9 +18,12 @@
     <div class="col-4">
       <div class="card">
         <div class="card-body">
-          <div class="row">
-            <div class="col-4" *ngFor="let star of stars">
-              <span class="badge badge-primary" (click)="starClick(star)" [class.badge-warning]="star === selectedStars">{{star}}</span>
+          <div id="stars" class="row">
+            <div class="star col-4" *ngFor="let star of stars">
+              <div (click)="starClick(star)">
+                <i class="far fa-star" [class.fas]="star === selectedStars"></i>
+                <span>{{star}}</span>
+              </div>
             </div>
           </div>
         </div>
